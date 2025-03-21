@@ -54,3 +54,38 @@ let authenticationStatus = isAuthenticated ? "Đã xác thực" : "Chưa xác th
 
 // In kết quả ra console
 console.log("Trạng thái xác thực:", authenticationStatus);
+
+// Function to determine access based on role
+function checkAccess(role) {
+  let message = "";
+
+  switch (role) {
+    case "Employee":
+      message = "You are authorized to access 'Dietary Services'.";
+      break;
+
+    case "Enrolled Member":
+      message = "You are authorized to access 'Dietary Services' and have one-on-one interaction with a dietician.";
+      break;
+
+    case "Subscriber":
+      message = "You are authorized to have partial access to 'Dietary Services'.";
+      break;
+
+    case "Non-Subscriber":
+      message = "You need to enroll or subscribe first to access 'Dietary Services'.";
+      break;
+
+    default:
+      message = "Invalid role. Please provide a valid role.";
+  }
+
+  console.log(message);
+}
+
+// Test cases
+checkAccess("Employee");          // Output: "You are authorized to access 'Dietary Services'."
+checkAccess("Enrolled Member");   // Output: "You are authorized to access 'Dietary Services' and have one-on-one interaction with a dietician."
+checkAccess("Subscriber");        // Output: "You are authorized to have partial access to 'Dietary Services'."
+checkAccess("Non-Subscriber");    // Output: "You need to enroll or subscribe first to access 'Dietary Services'."
+checkAccess("Guest");             // Output: "Invalid role. Please provide a valid role."
