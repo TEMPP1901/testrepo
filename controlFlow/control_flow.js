@@ -44,4 +44,13 @@ switch (userType) { // Kiểm tra giá trị của userType
         userCategory = "Unknown";
 }
 
-console.log("User Category:", userCategory); // Xem đầu ra trong console
+console.log("User Category:", userCategory); // Xem đầu ra trong cons
+
+// Bước 5: Sử dụng toán tử ba ngôi cho isAuthenticated và authenticationStatus
+let isAuthenticated = true; // Khai báo và khởi tạo biến
+
+// Sử dụng toán tử ba ngôi để gán giá trị dựa trên điều kiện của isAuthenticated
+let authenticationStatus = isAuthenticated ? "Đã xác thực" : "Chưa xác thực";
+
+// In kết quả ra console
+console.log("Trạng thái xác thực:", authenticationStatus);
